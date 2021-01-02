@@ -1,0 +1,533 @@
+/*global*/
+
+*,
+*:before,
+*after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.8;
+  font-size: 1.6rem;
+  /* background-image: url(../img/background-car.jpg); */
+  /* background-image: url(../img/backgroundIamge_02.jpg); */
+  background-image: url(../img/background-car_03.jpg);
+  background-size: cover;
+  background-position: center center;
+  color: black;
+  font-size: 1.8rem;
+}
+
+img {
+  width: 100%;
+}
+
+label {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/*Utilities*/
+
+.fw-300 {
+  font-weight: 300;
+}
+.fw-700 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5rem;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  padding: 0 4rem;
+  border-radius: 50%;
+  margin: 2rem 0;
+}
+
+h2 {
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+.dp-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.mg-top {
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.center {
+  width: 80%;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/*header*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d62246;
+  padding: 2rem 0;
+  border: none;
+}
+
+.logo {
+  max-width: 4rem;
+  margin: 0 0 0 2rem;
+}
+.logo img:hover {
+  transform: scale(1, 1.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav a {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.nav a:hover {
+  color: white;
+}
+
+/*img-Cars*/
+
+.img-01 {
+  background-image: url(../img/Bmw_Img.jpg);
+}
+.img-02 {
+  background-image: url(../img/Mercedezbenz_img.jpg);
+}
+.img-03 {
+  background-image: url(../img/Audi_img.jpg);
+}
+.img-04 {
+  background-image: url(../img/Lexus_img.jpg);
+}
+.img-05 {
+  background-image: url(../img/Renault_img.jpg);
+}
+.img-06 {
+  background-image: url(../img/Ford_img.jpg);
+}
+.img-07 {
+  background-image: url(../img/Opel_img.jpg);
+}
+.img-08 {
+  background-image: url(../img/Ferrari_img.jpg);
+}
+
+.bg-opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5rem;
+  margin-top: 2rem;
+}
+
+.img-cars {
+  height: 70vh;
+  display: flex;
+}
+
+.panel {
+  height: 90%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  flex: 0.5;
+  border-radius: 5rem;
+  margin: 1rem;
+  position: relative;
+  transition: flex 0.5s ease-in;
+  cursor: pointer;
+}
+
+.panel p {
+  font-size: 2.4rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 3.5;
+}
+
+.panel.active p {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+/*main*/
+/* h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: black;
+} */
+/*main*/
+label {
+  display: block;
+}
+
+input:not([type="submit"]),
+select,
+textarea {
+  padding: 1rem;
+  display: block;
+  width: 90%;
+  background-color: black;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+input[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+  margin-bottom: 1rem;
+}
+
+[type="file"] + label {
+  background-color: #d62246;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+textarea {
+  height: 10rem;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 94%;
+}
+
+.flex-columns {
+  display: flex;
+}
+
+fieldset {
+  padding: 1.5rem;
+  flex: 1;
+  background-color: #e1e1e1;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  border: none;
+  min-height: 25rem;
+}
+
+fieldset img {
+  max-width: 30rem;
+  cursor: pointer;
+}
+
+.flex-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid black;
+}
+
+legend {
+  padding: 0 1rem;
+  border: 1px solid black;
+  background-color: #d62246;
+  border-top-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: black;
+}
+
+.buttons {
+  width: 95%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.send {
+  display: block;
+  width: 45%;
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 1rem;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: 600;
+  background-color: #d62246;
+  transition: 1s;
+}
+
+.send:hover {
+  background-color: black;
+  color: white;
+  transition: 1s;
+}
+/*options*/
+
+.options-buttons {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  background-color: darkgray;
+  padding: 1rem 1rem;
+  border-radius: 2rem;
+}
+
+.options-buttons button {
+  color: black;
+  background-color: #d62246;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  transition: 0.5s;
+  /* margin-right: 1rem; */
+  border-radius: 1rem;
+  border: none;
+  flex-basis: calc(100% / 2 - 1rem);
+  margin-bottom: 1rem;
+}
+.options-buttons button:last-of-type {
+  margin-right: 0;
+}
+.options-buttons button:hover {
+  transform: scale(1, 1.1);
+  transition: 0.5s;
+}
+
+.card-buttons {
+  color: white;
+  padding: 1rem 2rem;
+  background-color: #d62246;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+}
+
+.data-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.5rem;
+}
+.higth-image {
+  max-height: 23rem;
+}
+
+.datas {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+}
+
+/*footer*/
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d62246;
+  padding: 2rem 0;
+  border: none;
+}
+
+.footer h3 {
+  margin-left: 2rem;
+  color: black;
+}
+
+/*********************************************ABOUT US**********************************/
+
+.aboutme {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  min-height: 40rem;
+  margin-bottom: 4rem;
+}
+
+.img-aboutme {
+  background-color: black;
+  border-radius: 1rem;
+  padding: 4rem;
+}
+
+.img-aboutme img {
+  border-radius: 50%;
+}
+
+.p-aboutme {
+  background-color: black;
+  border-radius: 1rem;
+  padding: 3rem;
+  line-height: 2;
+}
+
+.p-aboutme p {
+  color: #e1e1e1;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.contact-send {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background-color: #d62246;
+  padding: 2rem 4rem;
+  border: none;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+}
+
+.send-form {
+  display: flex;
+  justify-content: center;
+  transition: 0.8s;
+}
+
+.send-form input:hover {
+  transition: 0.8s;
+  background-color: black;
+  color: white;
+}
+
+/************************************************Projects******************************/
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards-content {
+  flex-basis: 45%;
+  min-height: 25rem;
+  color: white;
+  background-color: black;
+  padding: 2rem;
+  line-height: 2;
+  margin: 2rem 0;
+  border-radius: 1.5rem;
+  transform: scale(1, 1);
+  transition: 1s;
+}
+
+.cards-content:hover {
+  transform: scale(1, 1.05);
+  transition: 1s;
+}
+
+/*media queries*/
+
+@media (max-width: 1000px) {
+  .cards-content {
+    flex-basis: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel:nth-last-of-type(5),
+  .panel:nth-last-of-type(6),
+  .panel:nth-last-of-type(7),
+  .panel:nth-last-of-type(8) {
+    display: none;
+  }
+
+  .flex-columns {
+    display: flex;
+    flex-direction: column;
+  }
+  .options-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .options-buttons button {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .cards-content {
+    flex-basis: 100%;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .aboutme {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .mg-bottom {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .panel:nth-last-of-type(6),
+  .panel:nth-last-of-type(7),
+  .panel:nth-last-of-type(8) {
+    display: none;
+  }
+  /*   
+  header {
+    display: flex;
+    flex-direction: column;
+  } */
+}

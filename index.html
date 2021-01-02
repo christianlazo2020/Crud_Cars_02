@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/normalize" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./img/volante.svg" alt="Logo" />
+        </a>
+      </div>
+
+      <div class="nav">
+        <nav>
+          <a href="./index.html">Crud</a>
+          <a href="./aboutUs.html">About us</a>
+          <a href="./projects.html">Projetcs</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- <h1 class="text-center">Crud Cars</h1> -->
+      <header class="center img-cars mg-top bg-opacity">
+        <div class="panel active img-01">
+          <p>Bmw</p>
+        </div>
+        <div class="panel img-02">
+          <p>Mercedez Benz</p>
+        </div>
+        <div class="panel img-03">
+          <p>Audi</p>
+        </div>
+        <div class="panel img-04">
+          <p>Lexus</p>
+        </div>
+        <div class="panel img-05">
+          <p>Renault</p>
+        </div>
+        <div class="panel img-06">
+          <p>Ford</p>
+        </div>
+        <div class="panel img-07">
+          <p>Opel</p>
+        </div>
+        <div class="panel img-08">
+          <p>Ferrari</p>
+        </div>
+      </header>
+      <main class="center mg-top">
+        <form onsubmit="addCar()" class="flex-columns mg-top" action="">
+          <fieldset>
+            <legend>Properties</legend>
+            <label for="brand">Brand</label>
+            <select id="brand" required>
+              <option value="0" disabled selected>-- Select --</option>
+              <option value="BMW">BMW</option>
+              <option value="Mercedez-Benz">Mercedez-Benz</option>
+              <option value="Audi">Audi</option>
+              <option value="Lexus">Lexus</option>
+              <option value="Renault">Renault</option>
+              <option value="Ford">Ford</option>
+              <option value="Opel">Opel</option>
+              <option value="Ferrari">Ferrari</option>
+            </select>
+            <label for="model">Model</label>
+            <input type="text" id="model" / required>
+            <label for="color">Color</label>
+            <select id="color" required>
+              <option value="0" disabled selected>--Select--</option>
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="Yellow">Yellow</option>
+              <option value="Beige">Beige</option>
+              <option value="Pink">Pink</option>
+              <option value="Brown">Brown</option>
+              <option value="White">White</option>
+            </select>
+            <label for="year">Year</label>
+            <input type="number" id="year" min="1900" step="10" / required>
+            <label for="price">Price</label>
+            <input type="number" id="price" min="1000" step="1000" / required>
+
+            <div class="buttons">
+              <button type="submit" class="send" id="add">Add</button>
+              <button type="button" onclick="saveData()" class="send" id="save">
+                Save
+              </button>
+            </div>
+          </fieldset>
+
+          <fieldset class="img-center">
+            <legend>Add Photo</legend>
+            <div class="flex-add">
+              <img
+                for="file"
+                src="./img/camera (1).svg"
+                alt=""
+                id="previewimage"
+              />
+              <input
+                type="file"
+                class="custom-file"
+                accept="image/*"
+                id="file"
+                onchange="PreviewImage()"
+                required
+              />
+              <label for="file">Add Image</label>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="options-buttons center">
+          <button>Older</button>
+          <button>Newer</button>
+          <button>Lower Cost</button>
+          <button>Higher Cost</button>
+          <button>General View</button>
+          <button>Random Data</button>
+        </div>
+      </main>
+      <!-- cards -->
+      <section class="center">
+        <div class="card" id="dataBody">
+          <div class="cards-content">
+            <img src="../img/card_02.jpg" alt="" class="higth-image" />
+            <div class="data-card">
+              <div class="titles">
+                <span>Brand</span>
+                <span>Model</span>
+                <span>Color</span>
+                <span>Year</span>
+                <span>Price</span>
+              </div>
+              <div class="datas">
+                <span>Ferrari</span>
+                <span>A01</span>
+                <span>Red</span>
+                <span>1919</span>
+                <span>$25000</span>
+              </div>
+            </div>
+            <button class="card-buttons">Edit</button>
+            <button class="card-buttons">Delete</button>
+          </div>
+          <div class="cards-content">
+            <img src="./img/card_03.jpg" alt="" class="higth-image" />
+            <div class="data-card">
+              <div class="titles">
+                <span>Brand</span>
+                <span>Model</span>
+                <span>Color</span>
+                <span>Year</span>
+                <span>Price</span>
+              </div>
+              <div class="datas">
+                <span>Ferrari</span>
+                <span>A01</span>
+                <span>Red</span>
+                <span>1919</span>
+                <span>$25000</span>
+              </div>
+            </div>
+            <button class="card-buttons">Edit</button>
+            <button class="card-buttons">Delete</button>
+          </div>
+          <div class="cards-content">
+            <p>lorem20</p>
+          </div>
+          <div class="cards-content">
+            <p>lorem20</p>
+          </div>
+          <div class="cards-content">
+            <p>lorem20</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div>
+        <h3>Copiryght @</h3>
+      </div>
+      <div class="nav">
+        <nav>
+          <a href="./index.html">Crud</a>
+          <a href="./aboutUs.html">About us</a>
+          <a href="./projects.html">Projetcs</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
