@@ -530,4 +530,9 @@ legend {
     display: flex;
     flex-direction: column;
   } */
+
+  .site-header {
+    display: flex;
+    flex-direction: column;
+  }
 }
