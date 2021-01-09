@@ -2,5 +2,5 @@
 
 function sendData() {
   event.preventDefault();
-  alert("Datos enviado Correctamente, En breve nos comunicaremos contigo");
+  alert("Datos enviados Correctamente, En breve nos comunicaremos contigo");
 }
