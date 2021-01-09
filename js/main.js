@@ -1,5 +1,5 @@
 /*Para agregar imagenes desde el archivo local y luego mantenerlas en la pagina debo tener una base de dato para poder accederlas cada vz que necesite
-pero como no se solo dejare el crud para usarlo sin una base datos con todas las demas caracteristicas menos la de la imagen, cuando sepa como usarlo lo hare de nuevo y agregare las imagenes seguramente con una base de dato a menos que erick me solucione la inquietud*/
+pero como no se solo dejare el crud para usarlo sin una base datos con todas las demas caracteristicas menos la de la imagen, cuando sepa como usarlo lo hare de nuevo y agregare las imagenes seguramente con una base de dato a menos que erik me solucione la inquietud*/
 "use stritc";
 
 /*Con esta funcion manejo las imagenes*/
@@ -87,6 +87,7 @@ function printRegisterCars() {
     <span>${x.year}</span>
     <span>${x.price}</span>
     </div>
+    <img src="${x.img}"/>
     <div>
     <button class="card-buttons" onclick="editCars(${x.id})">Edit</button>
     <button class="card-buttons" onclick="deleteCars(${x.id})">Delete</button> 
