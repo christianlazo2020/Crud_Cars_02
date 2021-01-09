@@ -214,6 +214,7 @@ document.getElementById("generalview").addEventListener("click", function () {
 
 document.getElementById("randomdata").addEventListener("click", function () {
   console.log("datos random");
+  alert("Funcion en Desarrolo xD");
 });
 
 function printOptionsRegisters(index) {
