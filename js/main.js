@@ -85,7 +85,8 @@ function printRegisterCars() {
     <span>${x.model}</span>
     <span>${x.color}</span>
     <span>${x.year}</span>
-    <span>${x.price}</span></div>
+    <span>${x.price}</span>
+    </div>
     <div>
     <button class="card-buttons" onclick="editCars(${x.id})">Edit</button>
     <button class="card-buttons" onclick="deleteCars(${x.id})">Delete</button> 
@@ -93,6 +94,7 @@ function printRegisterCars() {
     </div>`;
 
     dataBody.innerHTML += row;
+    console.log(x.img);
   });
 }
 
@@ -106,12 +108,14 @@ function addCar() {
   printRegisterCars();
 }
 
+/* con esta funcion que recibe el id del objeto para borrarlo del array de registros y actualiza los  indicados por pantalla*/
 function deleteCars(id) {
   const search = registerCars.findIndex((x) => x.id === id);
   registerCars.splice(search, 1);
   printRegisterCars();
 }
 
+/* muestra los datos del registro en los input para poder cambiarlos y guardarlos con el boton save, el boton save esta sesabilitado, este solo se activa cuando el usuario de lio editar a un registro y se desactiva cuando el registro se guarda*/
 function editCars(id) {
   idGlobal = id;
   registerCars.forEach((x) => {
@@ -141,4 +145,104 @@ function saveData() {
   printRegisterCars();
 
   buttonSave.disabled = true;
+}
+
+/*funciones para los 6 botones de opciones le damos a cada boton una escucha y pasamos el indice a la otra funcion para que solo nos muestre por pantalla el objeto que esta en ese indice del array, estos botones solo se podran activar cuando el array de registros 
+tenga registros*/
+
+document.getElementById("older").addEventListener("click", function () {
+  if (registerCars.length > 0) {
+    let index = 0;
+    let data = 1000000;
+    registerCars.forEach((x) => {
+      if (x.year > 0 && x.year < data) {
+        data = x.year;
+        index = x.id;
+      }
+    });
+    printOptionsRegisters(index);
+  }
+});
+
+document.getElementById("newer").addEventListener("click", function () {
+  if (registerCars.length > 0) {
+    let index = 0;
+    let data = 0;
+    registerCars.forEach((x) => {
+      if (x.year > data) {
+        data = x.year;
+        index = x.id;
+      }
+    });
+    printOptionsRegisters(index);
+  }
+});
+
+document.getElementById("lowercost").addEventListener("click", function () {
+  if (registerCars.length > 0) {
+    let index = 0;
+    let data = 1000000000000000000000000;
+    registerCars.forEach((x) => {
+      if (x.price < data) {
+        data = x.price;
+        index = x.id;
+      }
+    });
+    printOptionsRegisters(index);
+  }
+});
+
+document.getElementById("highercost").addEventListener("click", function () {
+  if (registerCars.length > 0) {
+    let index = 0;
+    let data = 0;
+    registerCars.forEach((x) => {
+      if (x.price > data) {
+        data = x.price;
+        index = x.id;
+      }
+    });
+    printOptionsRegisters(index);
+  }
+});
+
+document.getElementById("generalview").addEventListener("click", function () {
+  if (registerCars.length > 0) {
+    printRegisterCars();
+  }
+});
+
+document.getElementById("randomdata").addEventListener("click", function () {
+  console.log("datos random");
+});
+
+function printOptionsRegisters(index) {
+  dataBody.innerHTML = "";
+
+  const print = registerCars.forEach((x) => {
+    if (x.id === index) {
+      dataBody.innerHTML += `<div class="cards-content">
+      <div class="data-card">
+      <div class="titles">
+      <span>Brand</span>
+      <span>Model</span>
+      <span>Color</span>
+      <span>Year</span>
+      <span>Price</span>
+      </div>
+      </div>
+      <div class="datas">
+      <span>${x.brand}</span>
+      <span>${x.model}</span>
+      <span>${x.color}</span>
+      <span>${x.year}</span>
+      <span>${x.price}</span>
+      </div>
+      <div>
+      <button class="card-buttons" onclick="editCars(${x.id})">Edit</button>
+      <button class="card-buttons" onclick="deleteCars(${x.id})">Delete</button> 
+      </div>
+      </div>`;
+    }
+  });
 }
