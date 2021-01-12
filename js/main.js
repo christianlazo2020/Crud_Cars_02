@@ -240,6 +240,7 @@ function printOptionsRegisters(index) {
       <span>${x.year}</span>
       <span>${x.price}</span>
       </div>
+      <img src="${x.img}"/>
       <div>
       <button class="card-buttons" onclick="editCars(${x.id})">Edit</button>
       <button class="card-buttons" onclick="deleteCars(${x.id})">Delete</button> 
